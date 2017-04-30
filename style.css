@@ -34,10 +34,14 @@ img {
   max-width: 100%;
 }
 
-h1, h2 {
-  color: #ffffff;
+h0 {
+  font-size: 100px;
+  font-family: 'Open Sans', sans-serif;
+  color: #F66A1B;
 }
-
+h2 {
+  color: #F66A1B;
+}
 /* -------------------------------- 
 
 Modules - reusable parts of our design
@@ -169,6 +173,12 @@ html, body {
   max-width: 1440px;
   margin: 0 auto;
 }
+
+.cd-main-content #cd-logobig img {
+    width: 131px;
+    height: 55px;
+  }
+
 @media only screen and (min-width: 1070px) {
   .cd-main-content {
     position: relative;
