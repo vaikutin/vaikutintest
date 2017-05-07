@@ -1,0 +1,71 @@
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+        <link rel="stylesheet" href="css/contact.css">
+    </head>
+    <body>
+
+      <form action="Contactsignup.html" method="post">
+      
+        <h1>Contact with Vaikutin</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name">
+          
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email">
+          
+          <label for="phone"> Phone Number:</label>
+          <input type="tel" id="phone" name="user_phone">
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label for="bio">Biography:</label>
+          <textarea id="bio" name="user_bio"></textarea>
+        </fieldset>
+        <fieldset>
+        <label for="job">Your passion:</label>
+        <select id="job" name="user_job">
+          <optgroup label="Home">
+            <option value="Home Decoration">Home Decoration</option>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Garden">Garden and exterior</option>
+            <option value="Health">Health</option>
+          </optgroup>
+          <optgroup label="Fashion">
+            <option value="Womenfashion">Women's fashion</option>
+            <option value="Menfashion">Men's fashion</option>
+            <option value="Children">For children</option>
+          </optgroup>
+          <optgroup label="Hobby">
+            <option value="Collectors">Collectors</option>
+            <option value="Outdoor">Outdoor activities</option>
+          </optgroup>
+          <optgroup label="Antiques">
+            <option value="AntiqueCollection">Old but goodies</option>
+            <option value="Memorabilia">Memorabilia</option>
+          </optgroup>
+        <optgroup label="Others">
+            <option value="No_interest">No specific interest</option>
+            <option value="Unique">I have unique interest</option>
+          </optgroup>
+        </select>
+        
+          <label>Interests:</label>
+          <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">To be a presenter</label><br>
+            <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">As an advertiser</label><br>
+          <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">With curiosity</label>
+        
+        </fieldset>
+        <button type="submit">Contact Vaikutin</button>
+      </form>
+      
+    </body>
+</html>
