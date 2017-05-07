@@ -7,7 +7,7 @@
 body {
   font-size: 100%;
   font-family: "Roboto", sans-serif;
-  color: #878cb0;
+  color: #F66A1B;
   background-color: #FCDFB3;
 }
 
@@ -20,6 +20,9 @@ form {
 }
 
 h1 {
+ font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  color: #F66A1B;
   margin: 0 0 20px 0;
   text-align: center;
 }
