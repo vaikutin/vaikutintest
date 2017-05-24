@@ -16,8 +16,8 @@ form {
   background: #f4f7f8;
   border-radius: 8px;
 }
-
-mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid {
+mdl-card__title mdl-color--light-blue-600 mdl-color-text--white
+, mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid {
   max-width: 300px;
   margin: 10px auto;
   padding: 10px 20px;
