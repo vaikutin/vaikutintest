@@ -54,7 +54,7 @@
         alert('Please enter a password.');
         return;
       }
-      if password != passwordCheck {
+      if (password != passwordCheck) {
                   alert('Password unmatched. Please enter a password again.');
         return;
       }    
