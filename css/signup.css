@@ -17,9 +17,19 @@ form {
   border-radius: 8px;
 }
 
+mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
 h1 {
   margin: 0 0 30px 0;
+ color: #fff;
   text-align: center;
+    font-style: normal;
 }
 
 input[type="text"],
