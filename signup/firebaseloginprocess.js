@@ -45,6 +45,7 @@
     function handleSignUp() {
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
+      var passwordCheck = document.getElementById('passwordCheck').value; 
       if (email.length < 4) {
         alert('Please enter an email address.');
         return;
@@ -53,6 +54,10 @@
         alert('Please enter a password.');
         return;
       }
+      if password != passwordCheck {
+                  alert('Password unmatched. Please enter a password again.');
+        return;
+      }    
       // Sign in with email and pass.
       // [START createwithemail]
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
@@ -152,9 +157,7 @@
       });
       // [END authstatelistener]
 
-      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-      document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
       document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
     }
 
