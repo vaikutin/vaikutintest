@@ -1,0 +1,43 @@
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  	<title>Vaikutin | Sign Up form</title>
+            <link rel="stylesheet" href="css/reset.css">
+        	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+        	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+        <link rel="stylesheet" href="css/contact.css">
+
+ <script src="/signup/firebaseloginprocess.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>  
+  
+  
+
+    </head>
+    <body>
+	   
+      <form action="/signup/VaikutinSignUp_stylized.html" method="post">
+      
+        <h1>Moi, Terve!</h1>
+        <p>Enter your email and password for joining Vaikutin's services.</p>
+                  &nbsp;&nbsp;&nbsp;<br>
+        <fieldset>
+          <input class="mdl-textfield__input" style="display:inline;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;<br>
+          <input class="mdl-textfield__input" style="display:inline;" type="password" id="password" name="password" placeholder="Password"/>
+		 &nbsp;&nbsp;&nbsp;<br>
+          <input class="mdl-textfield__input" style="display:inline;" type="password" id="passwordCheck" name="passwordCheck" placeholder="Retype password"/>
+          &nbsp;&nbsp;&nbsp;<br>
+        </fieldset>
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup" type="signup" >Sign Up</button>
+                  &nbsp;&nbsp;&nbsp;<br>
+        <note>By pressing sign up button, you agree with terms and policies of Vaikutin. Please see more about it from here.</note>
+      <note>Vaikutin is powered by Forethink Oy. All right reserved. 2017 </note>
+      </form>
+    
+    </body>
+
+<script src="/signup/initializeVaikutinFirebase.js"> </script>
+</html>

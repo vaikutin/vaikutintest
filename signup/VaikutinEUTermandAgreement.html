@@ -1,0 +1,290 @@
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  	<title>Vaikutin | Term & Policy</title>
+            <link rel="stylesheet" href="css/reset.css">
+        	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+        	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+        <link rel="stylesheet" href="css/contact.css">
+
+  <script src="/__/firebase/3.9.0/firebase-app.js"></script>
+  <script src="/__/firebase/3.9.0/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+
+  <script type="text/javascript">
+
+    /**
+     * Handles the sign up button press.
+     */
+    function handleSignUp() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var passwordCheck = document.getElementById('passwordCheck').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+		if (password != passwordCheck) {
+        alert('Please match password retype.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+           firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
+
+      // [END createwithemail]
+    }
+
+    function initApp() {
+      // Listening for auth state changes.
+      // [START authstatelistener]
+      firebase.auth().onAuthStateChanged(function(user) {
+        // [START_EXCLUDE silent]
+        document.getElementById('quickstart-verify-email').disabled = true;
+        // [END_EXCLUDE]
+        if (user) {
+          // User is signed in.
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+          // [START_EXCLUDE]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          if (!emailVerified) {
+            document.getElementById('quickstart-verify-email').disabled = false;
+          }
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          document.getElementById('quickstart-account-details').textContent = 'null';
+          // [END_EXCLUDE]
+        }
+        // [START_EXCLUDE silent]
+        document.getElementById('quickstart-sign-in').disabled = false;
+        // [END_EXCLUDE]
+      });
+      // [END authstatelistener]
+
+
+      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+    }
+
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+  
+  
+
+    </head>
+    <body>
+
+      <form action="VaikutinEUTermandAgreement.html" method="post">
+      
+        <h1>Term and Policy</h1>
+
+        <fieldset>
+  <h2>
+  By accessing or using the applications, content, activities and services owned or operated by Forethink (our "Services"), whether on our website, through a social network website, or through our mobile apps (our "Sites"), you are accepting and agreeing to be bound by the terms and conditions set forth below (these "Terms").
+
+Certain features of our Services may be subject to additional guidelines, terms, or rules, which will be posted in connection with those features. We reserve the right, at any time, to modify, suspend, or discontinue our Services, or any portions of them. You agree that we will not be liable to you or to any third party for any modification, suspension, or discontinuance of our Services, or any portions of them.
+
+In most cases, our Services may only be used if you have created an account with us by either registering through one of our Sites or by using your account with a third party social network website, like Facebook (a "Social Network Site"). By creating an account, you represent that (a) all required registration or other information you provide is truthful and accurate; (b) you are of legal age to agree to these Terms; and (c) your use of our Services does not violate any applicable law or regulation or these Terms. When you sign up for an account, you will be asked to choose a screen name and a password for your account. You may not use a user name or user profile that is used by someone else or that violates these Terms. We reserve the right to reclaim any user name that violates these Terms.
+
+Your Account with Social Network Sites. In some cases you may access our Services through a Social Network Site. If you are accessing our Services through a Social Network Site, you must comply with the terms and conditions applicable to that Social Network Site in addition to these Terms.
+
+Privacy. Please refer to our Privacy Policy for information on how we collect, use and disclose information from our users.
+
+Your Account is Your Responsibility. You are responsible for maintaining the confidentiality of your password and for any and all use of your account. You should notify us immediately if you suspect any unauthorized use of your account or access to your password. You may not (a) use the account or username of any other user; (b) allow someone else to use your account or username; or (c) sell, lend, transfer, or otherwise share your account, temporarily or permanently, with someone else. If you violate these Terms, we reserve the right to issue you a warning, suspend or even terminate your account (along with your ability to access and use the Services).
+
+Acceptable Use and Conduct
+
+You are solely responsible for your conduct when using our Services and you agree that you will use our Services in compliance with all applicable laws and regulations.
+
+Prohibited Conduct. You agree that you will not initiate, engage in, or encourage any Prohibited Conduct in connection with your use of our Services. "Prohibited Conduct" includes doing things like: (a) interfering or disrupting, or attempting to interfere or disrupt, any computer or network used to provide or support the Services or our Sites; (b) restricting or inhibiting any other user from using and enjoying the Services; (c) promoting, encouraging, advocating, or providing instructional information about illegal activities; (d) harassing, bullying or threatening other users; (e) impersonating another person or representing yourself as affiliated with us, our staff or other industry professionals ; (f) soliciting passwords, account information or other personal information from other users; (g) except as approved by us in writing, conducting commercial activities and/or promotions or advertisements; (h) subleasing your account or offering "free space" on or other access to your account to others; (i) using the Services for fraudulent transactions or for any purpose that violates any applicable local, state, national, or foreign laws, regulations, or treaties; or (k) otherwise creating liability for us.
+
+Prohibited Content. You agree that you will not post, exchange, make available, provide, or process any Prohibited Content. "Prohibited Content" includes content that: (a) is offensive or promotes racism, bigotry, hatred or physical harm of any kind against any group or individual; (b) bullies, defames, harasses or advocates stalking of, or intimidates another person; (c) involves the transmission of "junk mail," "chain letters," or unsolicited mass mailing, or "spamming;" (d) is false or misleading or promotes, endorses or furthers illegal activities or conduct that is abusive, threatening, obscene, defamatory or libelous; (e) is threatening, including threats directed at minors, threats against another individual or their family or friends; (f) infringes another person's content without a license to do so; (g) promotes, copies, performs or distributes an illegal or unauthorized copy of another person's work, whether it is protected or not, such as, presenting the work of a third party as your own (plagiarism) or providing pirated music, videos, or movies, or links to such content; (h) contains viruses, Trojan horses, worms, time bombs, or similar software; or (i) otherwise violates these Terms or creates liability for us.
+
+Content Your Provide. You are responsible for the content, including any text, images, sounds, video, and other material and information, that you upload or post on or through our Services (your "Content"), including its legality, reliability, and appropriateness. You should only upload or post your Content that you either own, created or have the right to use and publish. By uploading or posting your Content you grant us the right and license to store, reproduce, modify, create derivative works of, publish, distribute, transfer, transmit, publicly display, publicly perform, and use your Content in connection with providing our Services. You agree that we can also make your Content available to other users of the Services, who may view and/or use your Content, subject to these Terms.
+
+Note about Public Areas. "Public Areas" are those areas on the Services such as chat rooms or forums, message boards, bulletin boards, news groups, and pages that include testimonials, to which you may send communications that are publicly available to anyone who may have access to that public area. You should be careful about your communications in Public Areas because these communications disclose to the public your user name and user profile and any personal information you choose to disclose. Any information you include in any public profile, such as your message board profile, or in your messages using third party messaging and communication services is also available to others. You are solely responsible for your communications and the consequences of posting these communications to any Public Area.
+
+Enforcement by Us. We have the right (but not the obligation) to review any or all portions of your Content and delete (or modify) any of your Content from our Services for any reason, including if we believe, in our sole judgment, your Content violates these Terms or is Prohibited Content, or that we believe constitutes or promotes Prohibited Conduct or otherwise threatens the safety of, or harms any other person, or creates liability for us or any other person. We reserve the right (but have no obligation) to investigate and take appropriate action, including removing your Content from our Services (or modifying it), suspending or terminating your account and/or suspending or terminating the provision of our Services to you, and/or reporting you to law enforcement authorities, if you violate any provision of these Terms. In order to cooperate with governmental requests, subpoenas or court orders, to protect our systems, affiliates, service providers, partners, and other users, or to ensure the integrity and operation of our business and systems, we may access and disclose any information or content we consider necessary or appropriate, including your account information (i.e. name, e-mail address, etc.), IP address and traffic information, usage history, your Content, and your conduct.
+
+Fees
+
+We may charge fees for the use of certain portions or aspects of our Services, which are described in the Services and/or these Terms. Fees are subject to change at any time. You agree that we may charge fees to your credit card or other payment account for such Services and that you will pay all applicable fees assessed to your account. We may also accept payment through gift cards. If the total amount of a transaction is greater than the balance available on any such gift cards, we may refuse the transaction or charge your designated credit card or payment account for the balance. Our fees are exclusive of all taxes, levies, or duties imposed by taxing authorities, and you are responsible for payment of all such taxes, levies or duties. Our fees do not include charges and rates charged by your mobile carrier, including for data and messaging plans which are required to use the mobile features of the Services, and you are solely responsible for the payment of such charges and rates.
+
+Using Our Services
+
+As long as you comply with these Terms, you may view and use our Services for your personal, non-commercial entertainment purposes. No other use of our Services is authorized.
+
+Mobile Apps. The following terms apply to our Services accessed through or downloaded from any app store or distribution platform, such as the Apple App Store or Google Play, (an "App Provider"), which we make available through a mobile app ("App"). You acknowledge and agree that: (a) these Terms are concluded between us, and not with the App Provider, and that we are solely responsible for the App (not the App Provider); (b) the App Provider has no obligation to furnish any maintenance and support services with respect to the App; (c) in the event of any failure of the App to conform to any applicable warranty, (i) you may notify the App Provider and the App Provider will refund the purchase price for the App to you (if applicable), (ii) to the maximum extent permitted by applicable law, the App Provider will have no other warranty obligation whatsoever with respect to the App, and (iii) any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty will be our responsibility; (d) the App Provider is not responsible for addressing any claims you have or any claims of any third party relating to the App or your possession and use of the App, including, but not limited to: (i) product liability claims; (ii) any claim that the App fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer protection or similar legislation; (e) in the event of any third party claim that the App or your possession and use of that App infringes that third party's intellectual property rights, we will be responsible for the investigation, defense, settlement and discharge of any such intellectual property infringement claim to the extent required by these Terms; (f) the App Provider, and its subsidiaries, are third party beneficiaries of these Terms as it relates to your license of the App, and that, upon your acceptance of the terms and conditions of these Terms, the App Provider will have the right (and will be deemed to have accepted the right) to enforce these Terms as related to your license of the App against you as a third party beneficiary thereof; and (g) you must also comply with all applicable third party terms of service when using the App.
+
+Ownership. You acknowledge that all intellectual property rights in our Services and our Sites and the underlying technology, and all information and content available on our Services and in our Sites are owned by us and our suppliers (including other users) and are protected by copyright laws throughout the world. You may not download, upload, print, display, perform, reproduce, publish, license, post, transmit, modify, create derivative works of, reverse engineer, disassemble, decompile, adapt, distribute, transfer, or exploit the Services, our Sites or any content therein, in whole or in part without our prior written authorization. We and our suppliers (including other users) reserve all rights not granted in these Terms.
+
+Feedback. If you provide any suggestions, ideas, feedback, or recommendations to us regarding our Services ("Feedback"), we may use this Feedback for any purpose and without any obligation to you. By providing us with Feedback, you grant us a worldwide, perpetual, irrevocable, fully-paid and royalty-free license to use and exploit in any manner any and all Feedback.
+
+Copyright Policy
+
+It is our policy to remove, or disable access to, material that infringes any copyright on our Services after we have been notified by the copyright owner or the copyright owner's legal agent. If you believe that your work has been copied and posted on through our Services in a way that constitutes copyright infringement, please provide our copyright agent with the following information: (a) an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright interest; (b) an identification of the copyrighted work that you claim has been infringed; (c) a description of where the material that you claim is infringing is located on our Sites or through our Services; (d) your address, telephone number, and e-mail address; (e) a written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or law; (f) a statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf. Notice of claims of copyright infringement should be sent to our Copyright Agent via email to
+
+Third Party Links
+
+Our Services may contain advertisements, links and other promotional content of third parties ("Third Party Links"). These Third Party Links are not under our control, and we are not responsible for their content, goods, services, performance, operation, availability, business practices or policies. We are providing these Third Party Links to you only as a convenience but we do not imply any endorsement or recommendation of their content, goods, or services, or of any association of us with such third parties. If you access any of these Third Party Links, you do this entirely at your own risk and any charges or obligations you incur in your dealings with these third parties, are your responsibility. The websites available through the Third Party Links are subject to their own terms and policies, including privacy and data gathering practices.
+
+Termination
+
+Termination by You. You can terminate your account at any time by deactivating your account or by providing notice of termination to us. You can terminate the use of our Services through a Social Network Site by following the provisions in the terms and conditions applicable to that Social Network Site.
+
+Termination by Us. We reserve the right to terminate or suspend your account or your access to any or all portions of the Services at any time, for any reason, including your violation or breach of any provision in these Terms.
+
+Effect of Termination. All rights and licenses granted to you in these Terms will immediately cease upon any termination of these Terms. If your account or access to our Services is terminated or suspended because you violated these Terms, you will not be entitled to any refund of any fees nor will any fees be credited or reimbursed to you in any form and you will have no further right to access any of the foregoing or your account.
+
+Disclaimer
+
+Our Services and our Sites are provided on an "AS IS" and "AS AVAILABLE" basis and we do not represent, warrant, or guarantee that the Services, or our Sites will be provided uninterrupted, error-free, virus-free, or that defects will be corrected. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES REGARDING THE SERVICES AND OUR SITES, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING THE WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR ANY PARTICULAR PURPOSE OR USE, NON-INFRINGEMENT, ACCURACY, COMPLETENESS, OR CURRENTNESS. If applicable law requires any warranties with respect to our Services, all such warranties are limited in duration to thirty (30) days from the date of your first use of our Services. No warranties are made by any of our suppliers. Your access and use of our Services and our Sites is at your own risk.
+
+You agree that any Content you submit, including any location information, to us through our Services is done at your own discretion and risk. You will be solely responsible for any loss or damage to your Content. We are not responsible for the content provided by, or the conduct of, any user and you bear the entire risk of using the Services and any interactions with other users. Your interactions with third parties from any Third Party Links are between you and those third parties.
+
+We operate and provide the Services from the United States. We make no representation that the Services are appropriate or available in other locations. The information provided on the Services is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to any law or regulation of that jurisdiction or country or which would subject us to any registration requirement within that jurisdiction or country.
+
+Limitation of Liability
+
+WE WILL NOT BE LIABLE IN ANY WAY FOR ANY CLAIM, DAMAGE, COST, LIABILITY, OR LOSS OF ANY KIND, INCLUDING LOSS OR DAMAGE TO YOUR ACCOUNT, YOUR CONTENT, OR OTHER DATA OR INFORMATION, OR PERSONAL INJURY, DEATH, OR PROPERTY DAMAGE, ARISING FROM OR RELATING TO THE USE OF OR INABILITY TO USE THE SERVICES OR THE SITES, FOR ANY REASON, INCLUDING INTERRUPTIONS CAUSED BY (A) SOFTWARE OR HARDWARE FAILURES OR ISP DISRUPTIONS, (B) DELAYS, NON-DELIVERIES, ERRORS, SYSTEM DOWN TIME, MISDELIVERIES OR SERVICE INTERRUPTIONS CAUSED BY US, (C) YOUR CONTENT, (D) LOCATION INFORMATION PROVIDED BY YOU, ANY OTHER USER, OR OTHERWISE DISCLOSED ON THE SERVICES, OR (E) YOUR OR ANY OTHER USER'S ERRORS OR OMISSIONS.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WE WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES ARISING FROM OR RELATING TO THESE TERMS, OUR SITES, SERVICES, OR ANY CONTENT, EVEN IF INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, AND EVEN IF A REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE.
+
+OUR TOTAL LIABILITY TO YOU RELATING TO THESE SERVICES FOR ANY CAUSE WHATSOEVER, REGARDLESS OF THE FORM OF THE ACTION, WILL BE LIMITED TO THE AMOUNTS YOU HAVE PAID IN THE SIX (6) MONTHS PRECEDING THE DATE OF THE FIRST CLAIM GIVING RISE TO THE LIABILITY.
+
+Exclusions
+
+Some jurisdictions do not allow the exclusion of certain warranties or the exclusion or limitation of liability for consequential or incidental damages, so the limitations above may not apply to you.
+
+Indemnification
+
+You agree to defend, indemnify, and hold us harmless from any claim, liability, loss, injury, damage, cost, or expense (including attorneys' fees) incurred by us arising out of or relating to (a) your use of the Services (other than in accordance with these Terms), (b) any Content you provide, or (c) your violation or breach of any provision in these Terms or your violation of any rights of a third party.
+
+Modification
+
+These Terms may be amended by us from time to time. If we make material changes to these Terms, we will notify you by posting the revised Terms on our Sites or notifying you through the Services or at your primary email address (as specified in your account information). Your continued use of the Services after the changes go into effect will constitute your agreement to such changes. If you object to any change, your sole recourse is to terminate your account and cease using the Services.
+
+General Provisions
+
+These Terms constitute the entire agreement between us regarding your use of our Services and our Sites, which supersede and replace any prior written or oral agreements regarding the foregoing. Our failure to exercise or enforce any right or provision in these Terms is not a waiver of such right or provision. If any provision in these Terms is, for any reason, held to be invalid or unenforceable, the other provisions of these Terms will continue, unimpaired, and the invalid or unenforceable provision will be deemed modified so that it is valid and enforceable to the maximum extent permitted by law. The rights or obligations to use the Services are personal to you and are not assignable, and any such attempted assignment or transfer shall be void and without effect. These Terms will be governed and interpreted by and under the laws of the State of California, without giving effect to any conflicts of laws principles that would require the application of the law of a different state or jurisdiction. By using our Services you consent to personal jurisdiction and venue in the state and federal courts for San Francisco County, California for any lawsuit filed there against you by us arising from or relating to these Terms or the Services.
+
+This Privacy Policy explains how information is collected, used and disclosed by us, FashionTap, with respect to your access and use of our Services, whether on our website, through a social network website, or through our mobile apps. This Privacy Policy doesn't apply to any third-party websites, services or applications, including any websites, services and applications that you may access through our Services. Unless we define a term in this Privacy Policy, all capitalized words used in this Privacy Policy have the same meanings as in our Terms.
+
+Information We Collect
+
+We collect certain information that you provide to us when you use our Services, such as when you create an account or post information through our Services. We collect information like:
+
+your name,
+picture,
+email address,
+phone number,
+your gender,
+birthday/age group, and
+zip code/location.
+If you create your account using your login from a Social Network Site, we will access and collect the information that your privacy settings on that Social Network Site permits us to access so that we can create your account for you. We can also collect the contact information of your friends, if you choose to connect your contacts and address book information with your account, so that you can connect with your friends when you use our Services.
+
+We also automatically collect certain information when you use our Services, like the Internet Protocol (IP) address (if using a browser), operating system, the browser type, the address of a referring site, your location (if you enable this feature), and a device identifier (if using a mobile device). You can enable or disable location services when you use our Services at anytime, through your browser or mobile device settings. We also automatically collect certain information through the use of "cookies". A cookie is a small data file that your browser places on your computer that helps us better understand how you interact with and use our Sites. Most Internet browsers automatically accept cookies. You can instruct your browser, by editing its options, to stop accepting cookies or to prompt you before accepting a cookie from the websites you visit.
+
+How We Use the Information We Collect
+
+We use the information we collect for the purposes described below:
+
+to provide our Services and related services or information you request, and to process and complete any transactions;
+to respond to your emails, submissions, questions, comments, requests, and complaints and provide customer service;
+to personalize and improve our Services and your experiences when you use our Services;
+to increase the functionality and user friendliness of our Services;
+to monitor and analyze usage and trends of our Services and our Sites,
+to send you confirmations, updates, security alerts, and support and administrative messages and otherwise facilitate your use of, and our administration and operation of, our Services;
+to send you advertisements tailored to your interests;
+to find and connect with your friends (when instructed by you);
+to interact with and use our Services with your friends ; and
+for any other purpose for which the information was collected.
+Information We Share With Others
+
+We will not share the personal information we have collected from you, except as described below:
+
+when you give us your consent to do so, including if we notify you that the information you provide will be shared in a particular manner and you provide such information;
+with certain Social Network Sites, if you allow such sharing;
+with your friends with whom you want to connect with, and according to the preferences set in your account;
+with service providers who are working with us in connection with the operation of our Services and our Sites (these service providers may have access to your personal information but only to the extent necessary to perform services on our behalf and are obligated not to disclose that information or use it for any other purposes);
+when we believe that we are legally authorized or required to do so or that doing so is reasonably necessary or appropriate to comply with the law or legal processes or respond to lawful requests or legal authorities, including responding to subpoenas, warrants or court orders;
+to enforce or apply this Privacy Policy, our Terms or our other policies or agreements; and
+in connection with any merger, sale of company assets, financing or acquisition, or in any other situation where user information may be disclosed or transferred as one of our business assets.
+We may share aggregated or anonymous information (about you but doesn't identify you) with third parties:
+
+for usage analytics to help us better understand who is using our Services and how;
+to improve the relevancy of the ads you see on our Services and to tailor then to your interests; and
+for industry analysis, demographic profiling, research, analysis and other similar purposes.
+Links to Other Websites
+
+Our Services may contain Third Party Links. Any information you provide on those websites is provided directly to the owner of that website and is subject to their own terms and policies, including privacy and data gathering practices. Our Privacy Policy does not apply to these Third Party Links. We are not responsible for the privacy and security practices and policies of those websites.
+
+Security Measures We Take To Protect Your Information
+
+We employ administrative, physical and electronic measures designed to protect your information from unauthorized access, however, despite these efforts, no security measures are perfect or impenetrable and no method of data transmission can be guaranteed against any interception or other type of misuse. In the event that your personal information is compromised as a result of a breach of security, we will promptly notify you if your personal information has been compromised as required by applicable law.
+
+How to Access Your Information
+
+If you have an account, you can access and modify the information you provided us through your account. If you completely delete all such information, then your account will become deactivated and you will not be able to access our Services through your account. If you would like us to delete your personal information from our system, please email View the source of this page (right-click anywhere and select View Source) and copy everything after this colon: with a request that we delete your personal information from our database. We will use commercially reasonable efforts to honor your request; however, we may retain an archived copy of your records as required by law or for other legitimate business purposes.
+
+International Users
+
+Your information may be transferred to and maintained on computers located outside of your country or jurisdiction. If you are located outside the United States and choose to provide information to us, we may transfer your personal information to the United States (or any other country where we operate) and processes it there. Your submission of such information represents your agreement to that transfer.
+
+Information about Children
+
+We do not knowingly collect personal information from children. If we learn that we have collected personal information of a child under 13, we will take steps to delete such information from our files as soon as possible.
+
+Changes
+
+Any information that is collected is subject to the Privacy Policy in effect at the time such information is collected. We may, however, modify and revise our Privacy Policy from time-to-time. If we make any material changes to this policy, we will notify you of such changes by posting them on our Sites, through our Services or by sending you an email or other notification, and we will indicate when such changes will become effective. By continuing to access or use our Services after those changes become effective, you are agreeing to be bound by the revised policy.
+
+Please email if you have any questions about our Privacy Policy.
+
+Contacting Us
+
+If you have any questions about these Terms, please email
+
+This document was last updated on February 2, 2015
+    </h2>
+        </fieldset>
+
+
+      <note>Vaikutin is powered by Forethink Oy. All right reserved. 2017 </note>
+      </form>
+    
+    </body>
+
+</html>
